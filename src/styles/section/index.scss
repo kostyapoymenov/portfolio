@@ -1,0 +1,139 @@
+.paralax__container {
+  background-image: url(../images/bg/main_bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.login-btn {
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  z-index: 1;
+}
+
+.login-btn__button {
+  border: 1px solid #ffffff;
+  background-color: transparent;
+  padding: rem(15px) rem(25px);
+  transition: background-color 0.4s, border 0.4s;
+    &:hover {
+      background-color: $darkBlue;
+      border-color: transparent;
+    }
+}
+
+.login-btn__text {
+  color: #ffffff;
+  @include font-size(16px);
+}
+
+.welcome {
+  z-index: 1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.welcome-block {
+  background-color: rgba(24, 35, 62, 0.5);
+  width: rem(380px);
+}
+
+.welcome-block_content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: rem(40px);
+}
+
+.welcome-block__avatar {
+  border-radius: 50%;
+  width: rem(140px);
+  height: rem(140px);
+  display: block;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  overflow: hidden;
+  margin-bottom: rem(15px);
+}
+
+.welcome-block__info {
+  text-align: center;
+  margin-bottom: rem(30px);
+}
+
+.welcome-block__name {
+  color: #ffffff;
+  line-height: 1.2;
+  @include font-size(28px);
+  margin-bottom: 10px;
+}
+
+.welcome-block__text {
+  color: #ffffff;
+  @include font-size(16px);
+  line-height: 1.2;
+}
+
+.social__list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.social__item {
+  padding:rem(10px) rem(12px) ;
+}
+
+.social__link {
+  display: flex;
+  width:rem(22px);
+  height:rem(22px);
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.4s;
+}
+
+//.social__img {
+//  fill: $blue;
+//  &:hover {
+//    fill: $darkBlue;
+//  }
+//}
+
+.nav__list {
+  display: flex;
+}
+
+.nav__item {
+  border-right: 1px solid #7195d2;
+  background-color: $blue;
+  flex:1;
+  transition: background-color 0.4s;
+  &:last-child {
+    border-right-color: transparent;
+  }
+  &:hover {
+    background-color: $darkBlue;
+  }
+}
+
+.nav__link {
+  color: #ffffff;
+  @include font-size(16px);
+  display: inline-block;
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  justify-content: center;
+}
