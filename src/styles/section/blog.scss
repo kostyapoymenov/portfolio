@@ -1,0 +1,88 @@
+.hero{
+  .user__page {
+    font-family: 'Sansus_webissimo';
+    @include font-size(63px);
+    font-weight: 500;
+    color: #ffffff;
+    text-transform: uppercase;
+  }
+}
+
+.blog {
+  background-color: #faf8f0;
+  display: flex;
+}
+
+.double-triagle {
+  position: absolute;
+  bottom: 100%;
+  width: 100%;
+  min-height: 150px;
+}
+
+.double-triagle__svg {
+  fill: #faf8f0;
+  position: absolute;
+  bottom: 0;
+}
+
+.blog-left {
+  width: 30%;
+  padding: 2% 3%;
+}
+
+.blog-nav__link {
+  font-family: 'Sansus_webissimo';
+  @include font-size(16px);
+  font-weight: 400;
+  color: $grey;
+  padding: rem(15px);
+  text-align: right;
+  &.active {
+    color: #004cd1;
+    border-right: 2px solid #004cd1;
+  }
+}
+
+.blog-right {
+  width: 70%;
+  padding: 2% 6%;
+}
+
+.article {
+  border-bottom: 5px solid #ecebe4;
+  margin-bottom: rem(40px);
+  padding-bottom: rem(40px);
+  &:last-child {
+    border-bottom: none;
+    margin-bottom: rem(40px);
+    padding-bottom: 0;
+  }
+}
+
+.article__title {
+  font-family: 'Sansus_webissimo';
+  @include font-size(35px);
+  font-weight: 400;
+  color: $grey;
+  margin-bottom: rem(15px);
+}
+
+.article__date {
+  font-family: 'Roboto';
+  @include font-size(16px);
+  font-weight: 400;
+  color: #9fa8c5;
+  margin-bottom: rem(15px);
+}
+
+.article__text {
+  font-family: 'Roboto';
+  @include font-size(16px);
+  font-weight: 400;
+  color: $grey;
+  p {
+    line-height: 1.6;
+    margin-bottom: rem(10px);
+  }
+}

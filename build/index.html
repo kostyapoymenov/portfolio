@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Главная страница</title>
-    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/main.min.css">
   </head>
   <body>
     <div class="wrapper">
@@ -14,30 +14,106 @@
         <button class="login-btn__button"><span class="login-btn__text">Авторизоваться</span></button>
       </div>
       <section class="welcome">
-        <div class="welcome-block">
-          <div class="welcome-block_content">
-            <div class="welcome-block__avatar" style="background-image: url(images/content/avatar.jpg)"></div>
-            <div class="welcome-block__info">
-              <h1 class="welcome-block__name">Poymenov Konstantin</h1>
-              <h2 class="welcome-block__text">Личный сайт веб разработчика</h2>
+        <!--Класс .flip отвечает за переворот блока-->
+        <div class="flipper">
+          <div class="flip-block">
+            <div class="welcome-block flip-block__front">
+              <div class="welcome-block_content">
+                <div class="welcome-block__avatar" style="background-image: url(images/content/avatar.jpg)"></div>
+                <div class="welcome-block__info">
+                  <h1 class="welcome-block__name">Poymenov Konstantin</h1>
+                  <h2 class="welcome-block__text">Личный сайт веб разработчика</h2>
+                </div>
+                <div class="social">
+                  <ul class="social__list">
+                    <li class="social__item"><a class="social__link social__link_vk" href="https://vk.com/id294245982">
+                        <svg class="social__link_svg" width="22" height="22">
+                          <use xlink:href="images/icons/sprite.svg#vk"></use>
+                        </svg>
+                        <!--img.social__img(src=`images/icons/${social}.svg` alt='')--></a></li>
+                    <li class="social__item"><a class="social__link social__link_github" href="https://github.com/kostyapoymenov">
+                        <svg class="social__link_svg" width="22" height="22">
+                          <use xlink:href="images/icons/sprite.svg#github"></use>
+                        </svg>
+                        <!--img.social__img(src=`images/icons/${social}.svg` alt='')--></a></li>
+                    <li class="social__item"><a class="social__link social__link_in" href="https://ru.linkedin.com/">
+                        <svg class="social__link_svg" width="22" height="22">
+                          <use xlink:href="images/icons/sprite.svg#in"></use>
+                        </svg>
+                        <!--img.social__img(src=`images/icons/${social}.svg` alt='')--></a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="nav">
+                <ul class="nav__list">
+                  <li class="nav__item"><a class="nav__link" href="work.html">Мои работы</a></li>
+                  <li class="nav__item"><a class="nav__link" href="about.html">Обо мне</a></li>
+                  <li class="nav__item"><a class="nav__link" href="blog.html">Блог</a></li>
+                </ul>
+              </div>
             </div>
-            <div class="social">
-              <ul class="social__list">
-                <li class="social__item"><a class="social__link social__link_vk" href="#"><img class="social__img" src="images/icons/vk.svg" alt="" style="fill: #000"></a></li>
-                <li class="social__item"><a class="social__link social__link_github" href="#"><img class="social__img" src="images/icons/github.svg" alt="" style="fill: #000"></a></li>
-                <li class="social__item"><a class="social__link social__link_in" href="#"><img class="social__img" src="images/icons/in.svg" alt="" style="fill: #000"></a></li>
-              </ul>
+            <div class="welcome-block flip-block__back">
+              <form class="welcome-block_content welcom-form" method="POST">
+                <div class="welcom-form__title">Авторизуйтесь</div>
+                <div class="welcom-form__block">
+                  <div class="welcom-form__block_input">
+                    <div class="welcom-form__input_item">
+                      <input class="welcom-form__input" id="login" type="text" name="login" value="Логин">
+                      <div class="welcom-form__input_block">
+                        <div class="welcom-form__input_svg">
+                          <svg width="22" height="22">
+                            <use xlink:href="images/icons/sprite.svg#login"></use>
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="welcom-form__input_item">
+                      <input class="welcom-form__input" id="password" name="password" value="Пароль">
+                      <div class="welcom-form__input_block">
+                        <div class="welcom-form__input_svg">
+                          <svg width="22" height="22">
+                            <use xlink:href="images/icons/sprite.svg#password"></use>
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="welcom-form__block_check">
+                    <label class="welcom-form__label welcom-form__label-check" for="iHuman">
+                      <input class="welcom-form__input_select" id="iHuman" type="checkbox" name="iHuman" value="Я человек" checked="">
+                      <div class="welcom-form__input-my"></div>
+                      <div class="welcom-form__label_title">Я человек</div>
+                    </label>
+                    <div class="welcom-form__text">Вы точно не робот?</div>
+                    <div class="welcom-form__label welcom-form__label-radio">
+                      <label class="welcom-form__label welcom-form__label-radio" for="welcomCapch1">
+                        <input class="welcom-form__input_select" id="welcomCapch1" type="radio" name="welcomCapch" value="yes">
+                        <div class="welcom-form__input-my"></div>
+                        <div class="welcom-form__label_title">Да</div>
+                      </label>
+                      <label class="welcom-form__label welcom-form__label-radio" for="welcomCapch2">
+                        <input class="welcom-form__input_select" id="welcomCapch2" type="radio" name="welcomCapch" value="no">
+                        <div class="welcom-form__input-my"></div>
+                        <div class="welcom-form__label_title">Не совсем</div>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </form>
+              <div class="nav">
+                <ul class="nav__list">
+                  <li class="nav__item"><a class="nav__link">На главную</a></li>
+                  <li class="nav__item"><a class="nav__link">Войти</a></li>
+                </ul>
+              </div>
             </div>
-          </div>
-          <div class="nav">
-            <ul class="nav__list">
-              <li class="nav__item"><a class="nav__link">Мои работы</a></li>
-              <li class="nav__item"><a class="nav__link">Обо мне</a></li>
-              <li class="nav__item"><a class="nav__link">Блог</a></li>
-            </ul>
           </div>
         </div>
       </section>
+      <div class="signature">
+        <div class="signature__block">© Пойменов Константин | создано с любовью в LoftSchool | 2018</div>
+      </div>
     </div>
+    <script type="text/javascript" src="js/main.js"></script>
   </body>
 </html>

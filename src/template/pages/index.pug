@@ -10,23 +10,75 @@ block content
             button.login-btn__button
                 span.login-btn__text Авторизоваться
         section.welcome
-            .welcome-block
-                .welcome-block_content
-                    .welcome-block__avatar(style='background-image: url(images/content/avatar.jpg)')
-                    .welcome-block__info
-                        h1.welcome-block__name Poymenov Konstantin
-                        h2.welcome-block__text Личный сайт веб разработчика
-                    .social
-                        ul.social__list
-                            each social in ['vk', 'github', 'in']
-                                li.social__item
-                                    a(class=`social__link social__link_${social}` href='#')
-                                        img.social__img(src=`images/icons/${social}.svg` alt='' style='fill: #000')
-                .nav
-                    ul.nav__list
-                        li.nav__item
-                            a.nav__link Мои работы
-                        li.nav__item
-                            a.nav__link Обо мне
-                        li.nav__item
-                            a.nav__link Блог
+            //Класс .flip отвечает за переворот блока
+            .flipper
+                .flip-block
+                    .welcome-block.flip-block__front
+                        .welcome-block_content
+                            .welcome-block__avatar(style='background-image: url(images/content/avatar.jpg)')
+                            .welcome-block__info
+                                h1.welcome-block__name Poymenov Konstantin
+                                h2.welcome-block__text Личный сайт веб разработчика
+                            .social
+                                -
+                                    var socials = [
+                                        ['vk','https://vk.com/id294245982'],
+                                        ['github','https://github.com/kostyapoymenov'],
+                                        ['in','https://ru.linkedin.com/'],
+                                    ]
+                                ul.social__list
+                                    each social in socials
+                                        li.social__item
+                                            a(class=`social__link social__link_${social[0]}` href=`${social[1]}`)
+                                                svg.social__link_svg(width='22' height='22')
+                                                    use(xlink:href=`images/icons/sprite.svg#${social[0]}`)
+                                                //img.social__img(src=`images/icons/${social}.svg` alt='')
+                        .nav
+                            ul.nav__list
+                                li.nav__item
+                                    a.nav__link(href="work.html") Мои работы
+                                li.nav__item
+                                    a.nav__link(href="about.html") Обо мне
+                                li.nav__item
+                                    a.nav__link(href="blog.html") Блог
+                    .welcome-block.flip-block__back
+                        form.welcome-block_content.welcom-form(method='POST')
+                            .welcom-form__title Авторизуйтесь
+                            .welcom-form__block
+                                .welcom-form__block_input
+                                    .welcom-form__input_item
+                                        input.welcom-form__input#login(type="text" name="login" value="Логин")
+                                        .welcom-form__input_block
+                                            .welcom-form__input_svg
+                                                svg(width='22' height='22')
+                                                    use(xlink:href=`images/icons/sprite.svg#login`)
+                                    .welcom-form__input_item
+                                        input.welcom-form__input#password(name="password" value="Пароль")
+                                        .welcom-form__input_block
+                                            .welcom-form__input_svg
+                                                svg(width='22' height='22')
+                                                    use(xlink:href=`images/icons/sprite.svg#password`)
+                                .welcom-form__block_check
+                                    label.welcom-form__label.welcom-form__label-check(for="iHuman")
+                                        input.welcom-form__input_select#iHuman(type="checkbox" name="iHuman" value="Я человек" checked="")
+                                        .welcom-form__input-my
+                                        .welcom-form__label_title Я человек
+                                    .welcom-form__text Вы точно не робот?
+                                    .welcom-form__label.welcom-form__label-radio
+                                        label.welcom-form__label.welcom-form__label-radio(for="welcomCapch1")
+                                            input.welcom-form__input_select#welcomCapch1(type="radio" name="welcomCapch" value="yes")
+                                            .welcom-form__input-my
+                                            .welcom-form__label_title Да
+                                        label.welcom-form__label.welcom-form__label-radio(for="welcomCapch2")
+                                            input.welcom-form__input_select#welcomCapch2(type="radio" name="welcomCapch" value="no")
+                                            .welcom-form__input-my
+                                            .welcom-form__label_title Не совсем
+                        .nav
+                            ul.nav__list
+                                li.nav__item
+                                    a.nav__link На главную
+                                li.nav__item
+                                    a.nav__link Войти
+
+        .signature
+            .signature__block © Пойменов Константин | создано с любовью в LoftSchool | 2018

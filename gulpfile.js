@@ -10,10 +10,15 @@ const   gulp            = require('gulp'),
         imagemin        = require('gulp-imagemin'),
         rigger          = require('gulp-rigger'),
         del             = require('del'),
+        svgSprite       = require('gulp-svg-sprite'),
+        svgmin          = require('gulp-svgmin'),
+        cheerio         = require('gulp-cheerio'),
+        replace         = require('gulp-replace'),
         browserSync     = require('browser-sync').create(),
         sourcemaps      = require('gulp-sourcemaps'),
         gulpWebpack     = require('gulp-webpack'),
         webpack         = require('webpack'),
+        nodemon         = require('gulp-nodemon'),
         webpackConfig   = require('./webpack.config.js');
 
 const path = {
@@ -45,7 +50,7 @@ function template() {
 
 // Сборка стилей
 function style() {
-    var processors = [
+    let processors = [
         autoprefixer({browsers: ['last 6 version']})
     ];
     return gulp.src('./src/styles/main.scss')
@@ -54,8 +59,8 @@ function style() {
         .pipe(sass({outputStyle: 'compressed'}))
         .pipe(postcss(processors))
         .pipe(sourcemaps.write())
-        .pipe(gulp.dest(path.style.dest))
-        .pipe(rename('main.min.css'));
+        .pipe(rename({ suffix: ".min" }))
+        .pipe(gulp.dest(path.style.dest));
 }
 
 // Сборка изображений
@@ -72,6 +77,61 @@ function image() {
             cleanupIDs:true
         }))
         .pipe(gulp.dest(path.image.dest));
+}
+
+// Сборка svg
+function svg(done)  {
+    const prettySvgs = function() {
+    return gulp
+        .src(`src/images/icons/*.svg`)
+        .pipe(
+            svgmin({
+                js2svg: {
+                    pretty: true
+                }
+            })
+        )
+        .pipe(
+            cheerio({
+                run($) {
+                    $("[fill], [stroke], [style], [width], [height]")
+                        .removeAttr("fill")
+                        .removeAttr("stroke")
+                        .removeAttr("style")
+                        .removeAttr("width")
+                        .removeAttr("height");
+                },
+                parserOptions: { xmlMode: true }
+            })
+        )
+        .pipe(replace("&gt;", ">"));
+};
+
+prettySvgs()
+    .pipe(
+        svgSprite({
+            mode: {
+                symbol: {
+                    sprite: "../sprite.svg"
+                }
+            }
+        })
+    )
+    .pipe(gulp.dest(`build/images/icons`));
+
+// prettySvgs().pipe(
+//     $gp.sassInlineSvg({
+//         destDir: `${SRC_DIR}/styles/icons/`
+//     })
+// );
+
+done();
+}
+
+// Сборка шрифтов
+function fonts() {
+    return gulp.src('src/fonts/**/*')
+        .pipe(gulp.dest('build/fonts'))
 }
 
 // webpack
@@ -110,6 +170,6 @@ exports.clean = clean;
 
 gulp.task('default', gulp.series(
     clean,
-    gulp.parallel(style, template, image),
+    gulp.parallel(style, template, fonts, image, script, svg),
     gulp.parallel(watch, server)
 ));

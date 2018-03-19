@@ -5,9 +5,180 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Мои работы</title>
-    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/main.min.css">
   </head>
   <body>
-    <h1>Мои работы</h1>
+    <div class="main__wrapper">
+      <section class="hero section--big">
+        <div class="hero__links">
+          <div class="social">
+            <ul class="social__list">
+              <li class="social__item"><a class="social__link social__link_vk" href="https://vk.com/id294245982">
+                  <svg class="social__link_svg" width="22" height="22">
+                    <use xlink:href="images/icons/sprite.svg#vk"></use>
+                  </svg></a></li>
+              <li class="social__item"><a class="social__link social__link_github" href="https://github.com/kostyapoymenov">
+                  <svg class="social__link_svg" width="22" height="22">
+                    <use xlink:href="images/icons/sprite.svg#github"></use>
+                  </svg></a></li>
+              <li class="social__item"><a class="social__link social__link_in" href="https://ru.linkedin.com/">
+                  <svg class="social__link_svg" width="22" height="22">
+                    <use xlink:href="images/icons/sprite.svg#in"></use>
+                  </svg></a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="hero__menu hamburger"><a class="hamburger__link"><span class="hamburger__link_item"></span></a></div>
+        <div class="hero_main">
+          <div class="user hero__user">
+            <div class="user__img"><img class="user__avatar" src="images/content/avatar.jpg"></div>
+            <div class="user__desc">
+              <div class="user__name">Poymenov Konstantin</div>
+              <div class="user__text">Личный сайт разработчика</div>
+            </div>
+          </div>
+        </div>
+        <div class="arrow hero__scroll-button arrow__down"><a class="arrow__link">
+            <svg class="arrow__svg" width="26" height="17">
+              <use xlink:href="images/icons/sprite.svg#arrow_down"></use>
+            </svg></a></div>
+        <div class="hero__substrate">
+          <div class="main__title">Мои работы</div>
+          <svg class="hero__substrate_svg" width="100%" height="100%" preserveAspectRatio="none">
+            <use xlink:href="images/icons/sprite.svg#bg"></use>
+          </svg>
+        </div>
+      </section>
+      <section class="work">
+        <div class="work__info">
+          <div class="block-subtitle">Сайт школы онлайн образования</div>
+          <div class="work__info_skills">html, css, javascript</div><a class="btn work__btn">Посмотреть сайт
+            <svg class="work__btn_svg" width="20" height="20">
+              <use xlink:href="images/icons/sprite.svg#link"></use>
+            </svg></a>
+        </div>
+        <div class="work__show">
+          <!--.show__block--><img class="show__img" src="images/content/work-1.png" alt="Фото работы">
+        </div>
+        <div class="work__switch">
+          <div class="switch__item switch__item--prev">
+            <div class="switch__item_imposit"></div>
+            <svg class="arrow-down__svg" width="26" height="17">
+              <use xlink:href="images/icons/sprite.svg#arrow_down"></use>
+            </svg>
+          </div>
+          <div class="switch__item switch__item--next">
+            <div class="switch__item_imposit"></div>
+            <svg class="arrow-down__svg" width="26" height="17">
+              <use xlink:href="images/icons/sprite.svg#arrow_down"></use>
+            </svg>
+          </div>
+        </div>
+      </section>
+      <section class="feedback">
+        <div class="wrapper-block">
+          <div class="main__title">Что обо мне говорят</div>
+          <div class="feed-block">
+            <div class="feed-block__item">
+              <div class="feed-block__avatar"><img class="feed-block__img" src="images/content/user-1.jpg" alt="Фото"></div>
+              <div class="feed-block__content">
+                <div class="feed-block__text">
+                  <p>Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!</p>
+                </div>
+                <div class="feed-block__user">
+                  <div class="feed-block__name">Ковальчук Дмитрий</div>
+                  <div class="feed-block__post">- основательLoftSchool</div>
+                </div>
+              </div>
+            </div>
+            <div class="feed-block__item">
+              <div class="feed-block__avatar"><img class="feed-block__img" src="images/content/user-2.jpg" alt="Фото"></div>
+              <div class="feed-block__content">
+                <div class="feed-block__text">
+                  <p>Этот код выдержеит любые испытания. Только пожалуйста, не загружается сайт на слишком старых браузерах!</p>
+                </div>
+                <div class="feed-block__user">
+                  <div class="feed-block__name">Сабанцев Владимир</div>
+                  <div class="feed-block__post">- преподаватель</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-wrap">
+            <div class="form-wrap__content">
+              <div class="block-subtitle">Связаться со мной</div>
+              <form class="form">
+                <div class="form__block">
+                  <input class="form__input" type="text" name="form-name" value="Ваше имя">
+                </div>
+                <div class="form__block">
+                  <input class="form__input" type="text" name="form-email" value="Ваш email">
+                </div>
+                <div class="form__block">
+                  <textarea class="form__input" name="form-text" id="" cols="30" rows="6">Ваше сообщение</textarea>
+                </div>
+              </form>
+            </div>
+            <div class="nav form__nav">
+              <ul class="nav__list">
+                <li class="nav__item"><a class="nav__link">Отправить</a></li>
+                <li class="nav__item clear-btn"><a class="nav__link">Очистить</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="arrow arrow__top"><a class="arrow__link">
+              <svg class="arrow__svg" width="26" height="17">
+                <use xlink:href="images/icons/sprite.svg#arrow_down"></use>
+              </svg></a></div>
+        </div>
+        <footer class="footer">
+          <div class="footer__top">
+            <div class="footer__col footer__col--left">
+              <p>Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool</p>
+            </div>
+            <div class="footer__col footer__col--center">
+              <div class="footer__row">
+                <nav class="menu">
+                  <ul class="menu__list">
+                    <li class="menu__item"><a class="menu__link" href="">Мои работы</a></li>
+                    <li class="menu__item"><a class="menu__link" href="">Обо мне</a></li>
+                    <li class="menu__item"><a class="menu__link" href="">Блог</a></li>
+                    <li class="menu__item"><a class="menu__link" href="">Авторизация</a></li>
+                  </ul>
+                </nav>
+              </div>
+              <div class="footer__row">
+                <div class="social">
+                  <ul class="social__list">
+                    <li class="social__item"><a class="social__link social__link_vk" href="https://vk.com/id294245982">
+                        <svg class="social__link_svg" width="22" height="22">
+                          <use xlink:href="images/icons/sprite.svg#vk"></use>
+                        </svg></a></li>
+                    <li class="social__item"><a class="social__link social__link_github" href="https://github.com/kostyapoymenov">
+                        <svg class="social__link_svg" width="22" height="22">
+                          <use xlink:href="images/icons/sprite.svg#github"></use>
+                        </svg></a></li>
+                    <li class="social__item"><a class="social__link social__link_in" href="https://ru.linkedin.com/">
+                        <svg class="social__link_svg" width="22" height="22">
+                          <use xlink:href="images/icons/sprite.svg#in"></use>
+                        </svg></a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="footer__col footer__col--right">
+              <ul class="footer-contact">
+                <li class="footer-contact__item">kostya807740</li>
+                <li class="footer-contact__item"><a class="footer-contact__link" href="mailto:kostya6699@mail.ru">kostya6699@mail.ru</a></li>
+                <li class="footer-contact__item"><a class="footer-contact__link" href="tel:79811215823">+79811215823</a></li>
+                <li class="footer-contact__item">Санкт-Петербург</li>
+              </ul>
+            </div>
+          </div>
+          <div class="footer__bottom">© Poymenov Konstantin | Создано с любовью в LoftSchool | 2018</div>
+        </footer>
+      </section>
+    </div>
+    <script type="text/javascript" src="js/main.js"></script>
   </body>
 </html>
