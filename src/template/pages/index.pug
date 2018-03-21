@@ -30,9 +30,8 @@ block content
                                     each social in socials
                                         li.social__item
                                             a(class=`social__link social__link_${social[0]}` href=`${social[1]}`)
-                                                svg.social__link_svg(width='22' height='22')
+                                                svg.social__link_svg(width='100%' height='100%')
                                                     use(xlink:href=`images/icons/sprite.svg#${social[0]}`)
-                                                //img.social__img(src=`images/icons/${social}.svg` alt='')
                         .nav
                             ul.nav__list
                                 li.nav__item

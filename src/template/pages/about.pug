@@ -23,15 +23,14 @@ block content
             a.hamburger__link
                 span.hamburger__link_item
         .hero_main
-            //.section-title
-                img.section-title__img(src="images/bg/main_bg.jpg")
             .user.hero__user
                 .user__img
                     img.user__avatar(src="images/content/avatar.jpg")
                 .user__desc
                     .user__name Poymenov Konstantin
                     .user__text Личный сайт разработчика
-
+                .hero-star
+                    img.hero-star__img(src="images/bg/stars1.svg")
         .arrow.hero__scroll-button.arrow__down
             a.arrow__link
                 svg.arrow__svg(width='26' height='17')
@@ -48,9 +47,9 @@ block content
                     svg.triangle-shape(width='100%' height='100%' viewBox="0 0 900 120")
                         use(xlink:href='images/icons/sprite.svg#about_bg_left')
                 .about__left_title
-                    //svg.svg__stars(width='100%' height='100%')
-                    //    use(xlink:href='images/icons/sprite.svg#stars1')
                     .block-title Обо мне
+                        svg.title-star(width='100' height='100')
+                            use.title-star__svg(xlink:href=`images/icons/sprite.svg#stars2`)
                 .about__left_description
                     .user-desc
                         .user-desc__image

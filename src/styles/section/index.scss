@@ -135,7 +135,7 @@
 
 .social__link {
   display: flex;
-  width:rem(22px);
+  width:rem(33px);
   height:rem(22px);
   align-items: center;
   justify-content: center;
@@ -146,13 +146,6 @@
     transition: all 0.3s;
   }
 }
-
-//.social__img {
-//  fill: $blue;
-//  &:hover {
-//    fill: $darkBlue;
-//  }
-//}
 
 .nav__list {
   display: flex;

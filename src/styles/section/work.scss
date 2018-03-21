@@ -9,7 +9,11 @@
   .main__title {
     z-index: 10;
     position: absolute;
-    top: 60%;
+    top: 50%;
+    padding: rem(15px);
+  }
+  .title-star__svg {
+    fill: #ffffff;
   }
 }
 
@@ -28,6 +32,7 @@
   bottom: 0;
   fill: #161a29;
   fill-opacity: .7;
+  z-index: 1;
 }
 
 .work {
@@ -190,12 +195,13 @@
   margin:0 auto;
   padding: 5% 0;
   .main__title{
-    padding:2% 25%;
+    padding:3% 25% 4%;
+    position: relative;
+    }
   }
   .arrow {
     padding-bottom: 7%;
   }
-}
 
 .feed-block {
   display: flex;
@@ -287,6 +293,7 @@
   background-color:rgba(255, 255, 255, .1);
   color: #ababac;
   border:1px solid transparent;
+  outline: none;
 }
 
 .form__nav {
@@ -308,6 +315,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 10;
   &.arrow__top {
     transform: rotate(180deg);
     .arrow__link{
@@ -329,11 +337,9 @@
   height: rem(17px);
   transition: all 0.3s;
   opacity: .7;
-  //transform: rotate(180deg);
   &:hover {
     transform: scale(1.2);
     transition: all 0.3s;
     opacity: 1;
-  //  transform: rotate(180deg);
   }
 }
