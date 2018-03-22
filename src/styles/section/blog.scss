@@ -17,9 +17,12 @@
 
 .double-triagle {
   position: absolute;
-  bottom: 100%;
+  bottom: 99%;
   width: 100%;
   min-height: 150px;
+  @include phones {
+    min-height: 70px;
+  }
 }
 
 .double-triagle__svg {
@@ -31,6 +34,9 @@
 .blog-left {
   width: 30%;
   padding: 2% 3%;
+  @include tablets {
+    display: none;
+  }
 }
 
 .blog-nav__link {
@@ -49,6 +55,9 @@
 .blog-right {
   width: 70%;
   padding: 2% 6%;
+  @include tablets {
+    width:100%;
+  }
 }
 
 .article {

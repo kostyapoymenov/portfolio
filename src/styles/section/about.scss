@@ -166,6 +166,25 @@
 .about {
   width: 100%;
   display: flex;
+  .hero__substrate {
+    bottom:93%;
+    display: none;
+    @include tablets {
+      display: block;
+      z-index: 1;
+      height: 15%;
+    }
+    @include phones {
+      bottom:95%;
+    }
+    .hero__substrate_svg {
+      fill: #f2f0e8;
+      fill-opacity: 1;
+    }
+  }
+  @include tablets {
+    flex-direction: column;
+  }
 }
 
 .triangle {
@@ -185,12 +204,20 @@
       fill: #ffffff;
     }
   }
+
+  @include tablets {
+    display: none;
+  }
 }
 
 .about__left {
   width:50%;
   position: relative;
   background-color: #f2f0e8;
+  @include tablets {
+    width:100%;
+    z-index: 10;
+  }
 }
 
 .about__left_title {
@@ -209,6 +236,9 @@
   flex-direction: column;
   width:70%;
   margin:0 auto;
+  @include tablets {
+    padding:rem(30px) 0;
+  }
 }
 
 .user-desc__avatar {
@@ -270,10 +300,23 @@
 .about__right {
   width:50%;
   position: relative;
+  @include tablets {
+    width:100%;
+  }
 }
 
 .about__right_title {
   margin-bottom: rem(30px);
+}
+
+.skills-row {
+  @include tablets {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+  }
+
 }
 
 .skills-row__title {
@@ -296,8 +339,10 @@
   height: rem(130px);
   display: flex;
   align-items: center;
+  @include tablets {
+    justify-content: center;
+  }
 }
-
 .skill {
   position: relative;
   display: inline-block;
@@ -407,11 +452,24 @@
   background-color: #ffffff;
   opacity: .7;
   width:rem(580px);
+  @include tablets {
+    width:40%;
+  }
+  @include phones {
+    top: 0;
+    left: 0;
+    transform: none;
+    width: 100%;
+    opacity: 1;
+  }
 }
 
 .contacts__title {
   .block-subtitle {
     margin-bottom: rem(15px);
+    @include tablets {
+      margin-bottom: rem(20px);
+    }
   }
 }
 
@@ -420,6 +478,12 @@
   flex-direction: row;
   justify-content: space-between;
   padding: rem(10px) 0;
+  @include tablets {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding:0;
+  }
 }
 
 .contacts__item {
@@ -428,6 +492,11 @@
   width:50%;
   &:first-child {
     padding-right: rem(20px);
+  }
+
+  @include tablets {
+    width: 100%;
+    margin-bottom: 15px;
   }
 }
 

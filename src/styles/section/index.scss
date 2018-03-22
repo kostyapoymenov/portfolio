@@ -16,6 +16,10 @@
   top: 5%;
   right: 5%;
   z-index: 10;
+  @include phones {
+    right:50%;
+    transform: translateX(50%);
+  }
 }
 
 .login-btn__button {
@@ -208,7 +212,7 @@
   bottom: 0;
   width: 100%;
   text-align: center;
-  padding: 3% 0;
+  padding: 3%;
 }
 
 .welcom-form__input_item {

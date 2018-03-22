@@ -12,13 +12,19 @@ section {
   .hero__scroll-button {
     position: absolute;
     bottom: 5%;
+    @include phones {
+      bottom: 15%;
+    }
   }
   &.section--small {
     min-height: rem(500px);
     height: 50%;
   }
   &.section--big {
-    height: 120%;
+    height: 100vh;
+    @include tablets {
+      height: 90vh;
+    }
     .hero__user {
       top: 40%;
     }

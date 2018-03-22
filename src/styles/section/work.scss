@@ -15,6 +15,9 @@
   .title-star__svg {
     fill: #ffffff;
   }
+  @include phones {
+    height: 27%;
+  }
 }
 
 .main__title {
@@ -33,9 +36,13 @@
   fill: #161a29;
   fill-opacity: .7;
   z-index: 1;
+  @include phones {
+    height: 85%;
+  }
 }
 
 .work {
+  height:90vh;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 30% 40% 30%;
@@ -50,6 +57,7 @@
       "show show"
       "info info"
       "switch switch";
+    grid-template-rows: 45% 35% 20%;
   }
 }
 
@@ -191,22 +199,35 @@
 }
 
 .wrapper-block {
-  width:70%;
-  margin:0 auto;
+  width: 70%;
+  margin: 0 auto;
   padding: 5% 0;
-  .main__title{
-    padding:3% 25% 4%;
+  .main__title {
+    padding: 3% 25% 4%;
     position: relative;
+    @include tablets {
+      padding: 3% 15% 4%;
+    }
+    @include phones {
+      padding: 3% 5% 4%;
     }
   }
-  .arrow {
-    padding-bottom: 7%;
+  @include tablets {
+    width: 99%;
   }
+}
+
+.arrow {
+  padding-bottom: 7%;
+}
 
 .feed-block {
   display: flex;
   flex-direction: row;
   padding:rem(30px) 0;
+  @include phones {
+    flex-direction: column;
+  }
 }
 
 .feed-block__item  {
@@ -215,6 +236,10 @@
   align-items: center;
   flex-direction: column;
   padding:rem(15px);
+
+  @include phones {
+    width: 100%;
+  }
 }
 
 .feed-block__avatar {
@@ -274,6 +299,10 @@
     color: #ffffff;
     margin-bottom: rem(20px);
   }
+
+  @include phones {
+    width: 95%;
+  }
 }
 
 .form-wrap__content {
@@ -319,6 +348,9 @@
   &.arrow__top {
     transform: rotate(180deg);
     .arrow__link{
+      @include phones {
+        padding: rem(20px) 0;
+      }
       &:hover {
         transform: scale(1.2);
         transition: all 0.3s;
