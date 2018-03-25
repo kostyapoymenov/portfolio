@@ -9,12 +9,14 @@
   </head>
   <body>
     <div class="wrapper">
+      <video class="fullscreen-bg__video" loop muted autoplay poster="video/plane.jpg">
+        <source src="video/night.mp4" type="video/mp4">
+      </video>
       <div class="paralax__container"></div>
-      <div class="login-btn">
+      <div class="login-btn active">
         <button class="login-btn__button"><span class="login-btn__text">Авторизоваться</span></button>
       </div>
       <section class="welcome">
-        <!--Класс .flip отвечает за переворот блока-->
         <div class="flipper">
           <div class="flip-block">
             <div class="welcome-block flip-block__front">
@@ -77,7 +79,7 @@
                   </div>
                   <div class="welcom-form__block_check">
                     <label class="welcom-form__label welcom-form__label-check" for="iHuman">
-                      <input class="welcom-form__input_select" id="iHuman" type="checkbox" name="iHuman" value="Я человек" checked="">
+                      <input class="welcom-form__input_select" id="iHuman" type="checkbox" name="iHuman" value="Я человек">
                       <div class="welcom-form__input-my"></div>
                       <div class="welcom-form__label_title">Я человек</div>
                     </label>
@@ -99,7 +101,7 @@
               </form>
               <div class="nav">
                 <ul class="nav__list">
-                  <li class="nav__item"><a class="nav__link">На главную</a></li>
+                  <li class="nav__item"><a class="nav__link main-btn">На главную</a></li>
                   <li class="nav__item"><a class="nav__link">Войти</a></li>
                 </ul>
               </div>

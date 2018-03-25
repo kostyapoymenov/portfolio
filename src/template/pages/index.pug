@@ -5,12 +5,13 @@ block variables
 
 block content
     .wrapper
+        video.fullscreen-bg__video(loop muted autoplay poster="video/plane.jpg")
+            source(src="video/night.mp4" type="video/mp4")
         .paralax__container
-        .login-btn
+        .login-btn.active
             button.login-btn__button
                 span.login-btn__text Авторизоваться
         section.welcome
-            //Класс .flip отвечает за переворот блока
             .flipper
                 .flip-block
                     .welcome-block.flip-block__front
@@ -59,7 +60,7 @@ block content
                                                     use(xlink:href=`images/icons/sprite.svg#password`)
                                 .welcom-form__block_check
                                     label.welcom-form__label.welcom-form__label-check(for="iHuman")
-                                        input.welcom-form__input_select#iHuman(type="checkbox" name="iHuman" value="Я человек" checked="")
+                                        input.welcom-form__input_select#iHuman(type="checkbox" name="iHuman" value="Я человек")
                                         .welcom-form__input-my
                                         .welcom-form__label_title Я человек
                                     .welcom-form__text Вы точно не робот?
@@ -75,7 +76,7 @@ block content
                         .nav
                             ul.nav__list
                                 li.nav__item
-                                    a.nav__link На главную
+                                    a.nav__link.main-btn На главную
                                 li.nav__item
                                     a.nav__link Войти
 

@@ -38,6 +38,10 @@ const path = {
     scripts: {
         src: 'src/js/',
         dest: 'build/js/'
+    },
+    video: {
+        src: 'src/video/',
+        dest: 'build/video/'
     }
 };
 
@@ -61,6 +65,12 @@ function style() {
         .pipe(sourcemaps.write())
         .pipe(rename({ suffix: ".min" }))
         .pipe(gulp.dest(path.style.dest));
+}
+
+// Сборка видео
+function video() {
+    return gulp.src(path.video.src + '**/*.*')
+        .pipe(gulp.dest(path.video.dest));
 }
 
 // Сборка изображений
@@ -170,6 +180,6 @@ exports.clean = clean;
 
 gulp.task('default', gulp.series(
     clean,
-    gulp.parallel(style, template, fonts, image, script, svg),
+    gulp.parallel(style, template, fonts, image, script, svg, video),
     gulp.parallel(watch, server)
 ));
