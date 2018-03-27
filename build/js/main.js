@@ -1,1 +1,34 @@
-!function(e){var t={};function n(r){if(t[r])return t[r].exports;var c=t[r]={i:r,l:!1,exports:{}};return e[r].call(c.exports,c,c.exports,n),c.l=!0,c.exports}n.m=e,n.c=t,n.d=function(e,t,r){n.o(e,t)||Object.defineProperty(e,t,{configurable:!1,enumerable:!0,get:r})},n.r=function(e){Object.defineProperty(e,"__esModule",{value:!0})},n.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return n.d(t,"a",t),t},n.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},n.p="",n(n.s=0)}([function(e,t){const n=document.querySelector(".login-btn"),r=document.querySelector(".flipper"),c=document.querySelector(".main-btn"),o=document.querySelector(".blog-left__circle");document.querySelector(".blog-left"),n.addEventListener("click",function(){this.classList.remove("active"),r.classList.add("flip")}),c.addEventListener("click",function(){r.classList.remove("flip"),n.classList.add("active")}),o.addEventListener("click",function(){this.parentElement().classList.add("active")})}]);
+const   autorizationBtn = document.querySelector('.login-btn'),
+        flipperBlock = document.querySelector('.flipper'),
+        onMainBtn = document.querySelector('.main-btn'),
+        blogMobileBtn = document.querySelector('.blog-left__circle'),
+        saidbarBlog = document.querySelector('.blog-left');
+
+
+// Сайдбар в "Блог"
+if (blogMobileBtn !== null) {
+    blogMobileBtn.addEventListener('click', function () {
+        saidbarBlog.classList.toggle('active_a');
+    });
+}
+
+// Эффект flip
+if (autorizationBtn !== null || onMainBtn !== null) {
+    autorizationBtn.addEventListener('click', function () {
+        this.classList.remove('active');
+        flipperBlock.classList.add('flip');
+    });
+
+    onMainBtn.addEventListener('click', function () {
+        flipperBlock.classList.remove('flip');
+        autorizationBtn.classList.add('active');
+    });
+}
+
+const   hamburgerBtn = document.querySelector('.hamburger'),
+        hamburgerMenu = document.querySelector('.hamburger-menu');
+
+hamburgerBtn.addEventListener('click', function(){
+    this.classList.toggle('hamburger--active');
+    hamburgerMenu.classList.toggle('hamburger-menu--active');
+});

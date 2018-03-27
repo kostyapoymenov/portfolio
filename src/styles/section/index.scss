@@ -229,6 +229,7 @@
 
 .welcom-form__input {
   width:100%;
+  height:40px;
   border:none;
   padding: rem(15px) rem(65px) rem(15px);
   color: #c4cbcd;
@@ -258,13 +259,14 @@
   position: absolute;
   height: 100%;
   width: 45px;
-  top: 1px;
+  top: 0;
   left: 0;
   background-color: #f0efe9;
   .welcom-form__input_svg {
     position: absolute;
-    top:13px;
-    left:12px;
+    top:50%;
+    left:50%;
+    transform: translateY(-50%) translateX(-50%);
     fill: #c4cbcd;
   }
 }
@@ -325,7 +327,7 @@
       background-size: cover;
       fill: #ffffff;
       background-size: 10px;
-      margin: 7px 6px;
+      margin: rem(7px) rem(5px);
     }
   }
 }

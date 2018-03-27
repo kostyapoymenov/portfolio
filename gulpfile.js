@@ -147,7 +147,7 @@ function fonts() {
 // webpack
 function script() {
     return gulp.src('./src/js/main.js')
-        .pipe(gulpWebpack(webpackConfig, webpack))
+        // .pipe(gulpWebpack(webpackConfig, webpack))
         .pipe(gulp.dest(path.scripts.dest));
 }
 

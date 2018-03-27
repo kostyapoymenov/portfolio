@@ -5,18 +5,30 @@ const   autorizationBtn = document.querySelector('.login-btn'),
         saidbarBlog = document.querySelector('.blog-left');
 
 
-// Эффект flip
-autorizationBtn.addEventListener('click', function () {
-   this.classList.remove('active');
-   flipperBlock.classList.add('flip');
-});
-
-onMainBtn.addEventListener('click', function () {
-    flipperBlock.classList.remove('flip');
-    autorizationBtn.classList.add('active');
-});
-
 // Сайдбар в "Блог"
-blogMobileBtn.addEventListener('click', function () {
-    this.parentElement().classList.add('active');
+if (blogMobileBtn !== null) {
+    blogMobileBtn.addEventListener('click', function () {
+        saidbarBlog.classList.toggle('active_a');
+    });
+}
+
+// Эффект flip
+if (autorizationBtn !== null || onMainBtn !== null) {
+    autorizationBtn.addEventListener('click', function () {
+        this.classList.remove('active');
+        flipperBlock.classList.add('flip');
+    });
+
+    onMainBtn.addEventListener('click', function () {
+        flipperBlock.classList.remove('flip');
+        autorizationBtn.classList.add('active');
+    });
+}
+
+const   hamburgerBtn = document.querySelector('.hamburger'),
+        hamburgerMenu = document.querySelector('.hamburger-menu');
+
+hamburgerBtn.addEventListener('click', function(){
+    this.classList.toggle('hamburger--active');
+    hamburgerMenu.classList.toggle('hamburger-menu--active');
 });

@@ -1,0 +1,104 @@
+@include tablets {
+  .hamburger__link {
+    display: flex;
+  }
+
+  .hamburger__link_item {
+    width:rem(40px);
+    height: rem(5px);
+    background-color: #ffffff;
+    border-radius: 3px;
+    margin: 10px 0;
+    transition: all .3s;
+    &::after {
+      content: '';
+      position: absolute;
+      top:rem(-5px);
+      width:100%;
+      height: rem(4px);
+      background-color: #ffffff;
+      border-radius: 3px;
+      transition: all .3s;
+    }
+    &::before {
+      content: '';
+      position: absolute;
+      bottom:rem(-5px);
+      width:100%;
+      height: rem(4px);
+      background-color: #ffffff;
+      border-radius: 3px;
+      transition: all .3s;
+    }
+  }
+
+  .hamburger {
+    position: absolute;
+    top:rem(35px);
+    right:rem(30px);
+    z-index: 10;
+    transition: all .3s;
+    &.hamburger--active {
+      z-index: 110;
+      .hamburger__link_item {
+        background-color: transparent;
+        transition: all .3s;
+        &::before {
+          transform: rotate(45deg);
+          top: 50%;
+          transition: all .3s;
+        }
+        &::after {
+          transform: rotate(-45deg);
+          top: 50%;
+          transition: all .3s;
+        }
+      }
+    }
+  }
+
+  .hamburger-menu {
+    display: none;
+    &.hamburger-menu--active {
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: rgba(37, 52, 104, .87);
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      z-index: 100;
+    }
+  }
+
+  .hamburger-menu__item {
+    text-align: center;
+    margin: rem(10px) 0;
+    &.hamburger-menu__item--active {
+      .hamburger-menu__link {
+        &::after {
+          content: '';
+          position: absolute;
+          width: rem(80px);
+          height: rem(4px);
+          background-color: #ffffff;
+          bottom: 0;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+      }
+    }
+  }
+
+  .hamburger-menu__link {
+    color: #ffffff;
+    font-family: 'Sansus_webissimo';
+    font-weight: 500;
+    @include font-size(55px);
+    text-transform: uppercase;
+    padding: rem(10px);
+  }
+}
+
