@@ -37,16 +37,18 @@ block content
         .double-triagle
             svg.double-triagle__svg(width='100%' height='100%')
                 use(xlink:href=`images/icons/sprite.svg#bg`)
-        .blog-left
+        .blog-left.active
+            .blog-left__circle
             ul.blog-nav
-                li.blog-nav__item
-                    a.blog-nav__link.active(href="#") Самое важное в SASS
+                li.blog-nav__item.active
+                    a.blog-nav__link(href="#") Самое важное в SASS
                 li.blog-nav__item
                     a.blog-nav__link(href="#") Приёмы в вёрстке, без которых не обходится ни один сайт
                 li.blog-nav__item
                     a.blog-nav__link(href="#") Самый необходимый набор Gulp плагинов
                 li.blog-nav__item
                     a.blog-nav__link(href="#") Почему я выбрал Jade
+
         .blog-right
             .article
                .article__title Самое важное в SASS

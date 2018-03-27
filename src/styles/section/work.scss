@@ -322,7 +322,9 @@
   background-color:rgba(255, 255, 255, .1);
   color: #ababac;
   border:1px solid transparent;
-  outline: none;
+  &:focus {
+    outline: 1px solid $blue;
+  }
 }
 
 .form__nav {

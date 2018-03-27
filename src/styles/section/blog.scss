@@ -8,8 +8,6 @@
   }
 }
 
-
-
 .blog {
   background-color: #faf8f0;
   display: flex;
@@ -37,6 +35,32 @@
   @include tablets {
     display: none;
   }
+  @include phones {
+    width: 80%;
+    height:100%;
+    display: block;
+    position: absolute;
+    right:100%;
+    background-color: #253468;
+    &.active {
+      right:21%;
+    }
+  }
+
+}
+
+.blog-nav__item {
+  &.active {
+    .blog-nav__link {
+      color: #004cd1;
+      border-right: 2px solid #004cd1;
+      @include phones {
+        color: #ffffff;
+        font-weight: 500;
+        border-right: none;
+      }
+    }
+  }
 }
 
 .blog-nav__link {
@@ -46,10 +70,21 @@
   color: $grey;
   padding: rem(15px);
   text-align: right;
-  &.active {
-    color: #004cd1;
-    border-right: 2px solid #004cd1;
+  @include phones {
+    color: #cfd1d9;
+    font-weight: 300;
+    padding:rem(15px) 0;
   }
+}
+
+.blog-left__circle {
+  height:100px;
+  width:100px;
+  border-radius: 50%;
+  background-color: #253468;
+  position: absolute;
+  top:20%;
+  left:72%;
 }
 
 .blog-right {
