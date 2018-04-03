@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="styles/main.min.css">
   </head>
   <body>
+    <div class="preloader" id="page-preloader">
+      <div class="loader"><span class="load-perc">0%</span></div>
+    </div>
     <div class="wrapper">
       <video class="fullscreen-bg__video" loop muted autoplay poster="">
         <source src="video/night.mp4" type="video/mp4">
@@ -117,13 +120,14 @@
     <div class="hamburger-menu">
       <nav class="hamburger-menu__nav">
         <ul class="hamburger-menu__list">
-          <li class="hamburger-menu__item hamburger-menu__item--active"><a class="hamburger-menu__link" href="#">Мои работы</a></li>
-          <li class="hamburger-menu__item"><a class="hamburger-menu__link" href="#">Блог</a></li>
-          <li class="hamburger-menu__item"><a class="hamburger-menu__link" href="#">Обо мне</a></li>
-          <li class="hamburger-menu__item"><a class="hamburger-menu__link" href="#">Авторизация</a></li>
+          <li class="hamburger-menu__item hamburger-menu__item--active"><a class="hamburger-menu__link" href="work.html">Мои работы</a></li>
+          <li class="hamburger-menu__item"><a class="hamburger-menu__link" href="blog.html">Блог</a></li>
+          <li class="hamburger-menu__item"><a class="hamburger-menu__link" href="about.html">Обо мне</a></li>
+          <li class="hamburger-menu__item"><a class="hamburger-menu__link" href="index.html">Авторизация</a></li>
         </ul>
       </nav>
     </div>
+    <script script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
   </body>
 </html>

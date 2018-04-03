@@ -46,3 +46,36 @@ section {
     transition: background-color 0.4s;
   }
 }
+
+.preloader {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  transition: all 1s;
+  background: #000;
+  z-index: 100500;
+  background: url('../images/bg/night_prel_bg.jpg') no-repeat;
+  background-size: cover;
+  visibility: visible;
+  .loader {
+    position: absolute;
+    width:100%;
+    text-align: center;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .load-perc {
+    color:#ffffff;
+    font-family: 'Roboto';
+    font-weight: 300;
+    @include font-size(20px);
+  }
+  &.done {
+    opacity: 0;
+    visibility: hidden;
+  }
+}

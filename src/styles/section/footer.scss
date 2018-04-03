@@ -1,15 +1,15 @@
 .footer__top {
-  background: rgba(71, 75, 87, .85);
-  display: flex;
-  flex:1 1 auto;
-  color: #ffffff;
-  padding: rem(25px) 0;
+   background: rgba(71, 75, 87, .85);
+   display: flex;
+   flex:1 1 auto;
+   color: #ffffff;
+   padding: rem(25px) 0;
 
-  @include tablets {
-    display: block;
-    padding:rem(25px) rem(20px);
-  }
-}
+   @include tablets {
+     display: block;
+     padding:rem(25px) rem(20px);
+   }
+ }
 
 .footer__col {
   border-right: 1px solid #4e5563;
@@ -34,6 +34,7 @@
     margin-bottom: rem(15px);
   }
 }
+
 .footer__col--center {
   flex: 2;
   @include tablets {

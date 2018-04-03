@@ -104,9 +104,9 @@ function svg(done)  {
         .pipe(
             cheerio({
                 run($) {
-                    $("[fill], [stroke], [style], [width], [height]")
-                        .removeAttr("fill")
-                        .removeAttr("stroke")
+                    $("[style], [width], [height]")
+                        // .removeAttr("fill")
+                        // .removeAttr("stroke")
                         .removeAttr("style")
                         .removeAttr("width")
                         .removeAttr("height");
@@ -180,6 +180,6 @@ exports.clean = clean;
 
 gulp.task('default', gulp.series(
     clean,
-    gulp.parallel(style, template, fonts, image, script, svg, video),
+    gulp.parallel(style, template, image, fonts, script, svg, video),
     gulp.parallel(watch, server)
 ));

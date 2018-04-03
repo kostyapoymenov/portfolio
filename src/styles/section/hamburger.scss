@@ -1,3 +1,11 @@
+.hamburger {
+  display: none;
+}
+
+.hamburger-menu {
+  display: none;
+}
+
 @include tablets {
   .hamburger__link {
     display: flex;
@@ -33,6 +41,7 @@
   }
 
   .hamburger {
+    display: block;
     position: absolute;
     top:rem(35px);
     right:rem(30px);
@@ -58,19 +67,55 @@
   }
 
   .hamburger-menu {
-    display: none;
-    &.hamburger-menu--active {
+    transition: all .3s;
+    &:after {
       position: absolute;
+      display: block;
+      content: '';
+      left: 100%;
+      width: 51%;
+      height: 100%;
+      z-index: 1;
+      transition: all .3s;
+    }
+    &:before {
+      position: absolute;
+      display: block;
+      content: '';
+      right: 100%;
+      width: 51%;
+      height: 100%;
+      z-index: 1;
+      transition: all .3s;
+    }
+    &.hamburger-menu--active {
+      position: fixed;
+      overflow: hidden;
       display: flex;
       justify-content: center;
       align-items: center;
-      background-color: rgba(37, 52, 104, .87);
+      background-color: transparent;
       top: 0;
       right: 0;
       left: 0;
       bottom: 0;
       z-index: 100;
+      transition: all .3s;
+      &:after {
+        transition: all .3s;
+        background-color: rgba(37, 52, 104, .87);
+        left: 49%
+      }
+      &:before {
+        transition: all .3s;
+        right: 49%;
+        background-color: rgba(37, 52, 104, .87);
+      }
     }
+  }
+
+  .hamburger-menu__nav {
+    z-index: 10;
   }
 
   .hamburger-menu__item {

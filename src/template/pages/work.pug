@@ -5,7 +5,7 @@ block variables
 
 block content
     .main__wrapper
-        section.hero.section--big
+        section.hero.section--big#hero
             .hero__links
                 .social
                     -
@@ -30,7 +30,7 @@ block content
                     .hero-star
                         img.hero-star__img(src="images/bg/stars1.svg")
             .arrow.hero__scroll-button.arrow__down
-                a.arrow__link
+                a.arrow__link(href='#work')
                     svg.arrow__svg(width='26' height='17')
                         use(xlink:href=`images/icons/sprite.svg#arrow_down`)
             .hero__substrate
@@ -40,22 +40,39 @@ block content
                             use(xlink:href=`images/icons/sprite.svg#stars2`)
                 svg.hero__substrate_svg(width='100%' height='100%' preserveAspectRatio="none")
                     use(xlink:href=`images/icons/sprite.svg#bg`)
-        section.work
-            .work__info
+        section.work#work
+            .slider__info
                 .block-subtitle Сайт школы онлайн образования
                 .work__info_skills html, css, javascript
                 a.btn.work__btn Посмотреть сайт
                     svg.work__btn_svg(width='20' height='20')
                         use(xlink:href=`images/icons/sprite.svg#link`)
-            .work__show
-                //.show__block
+            .slider__show
                 img.show__img(src="images/content/work-1.png" alt="Фото работы")
-            .work__switch
+            .slider__switch
                 .switch__item.switch__item--prev
+                    ul.slider__list
+                        li.slider__item.active
+                            img.show__img(src="images/content/work-1.png")
+                        li.slider__item
+                            img.show__img(src="images/content/work-2.png")
+                        li.slider__item
+                            img.show__img(src="images/content/work-3.png")
+                        li.slider__item
+                            img.show__img(src="images/content/work-4.png")
                     .switch__item_imposit
                     svg.arrow-down__svg(width='26' height='17')
                         use(xlink:href=`images/icons/sprite.svg#arrow_down`)
                 .switch__item.switch__item--next
+                    ul.slider__list
+                        li.slider__item.active
+                            img.show__img(src="images/content/work-1.png")
+                        li.slider__item
+                            img.show__img(src="images/content/work-2.png")
+                        li.slider__item
+                            img.show__img(src="images/content/work-3.png")
+                        li.slider__item
+                            img.show__img(src="images/content/work-4.png")
                     .switch__item_imposit
                     svg.arrow-down__svg(width='26' height='17')
                         use(xlink:href=`images/icons/sprite.svg#arrow_down`)
@@ -101,7 +118,7 @@ block content
                             li.nav__item.clear-btn
                                 a.nav__link Очистить
                 .arrow.arrow__top
-                    a.arrow__link
+                    a.arrow__link(href='#hero')
                         svg.arrow__svg(width='26' height='17')
                             use(xlink:href=`images/icons/sprite.svg#arrow_down`)
 
