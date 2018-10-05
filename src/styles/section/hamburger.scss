@@ -55,20 +55,19 @@
         &::before {
           transform: rotate(45deg);
           top: 50%;
-          transition: all .3s;
         }
         &::after {
           transform: rotate(-45deg);
           top: 50%;
-          transition: all .3s;
         }
       }
     }
   }
 
   .hamburger-menu {
-    transition: all .3s;
+    transition: all 3s;
     &:after {
+      transition: all 3s;
       position: absolute;
       display: block;
       content: '';
@@ -76,7 +75,6 @@
       width: 51%;
       height: 100%;
       z-index: 1;
-      transition: all .3s;
     }
     &:before {
       position: absolute;
@@ -86,7 +84,6 @@
       width: 51%;
       height: 100%;
       z-index: 1;
-      transition: all .3s;
     }
     &.hamburger-menu--active {
       position: fixed;
@@ -102,13 +99,11 @@
       z-index: 100;
       transition: all .3s;
       &:after {
-        transition: all .3s;
         background-color: rgba(37, 52, 104, .87);
-        left: 49%
+        left: 49.8%
       }
       &:before {
-        transition: all .3s;
-        right: 49%;
+        right: 49.8%;
         background-color: rgba(37, 52, 104, .87);
       }
     }

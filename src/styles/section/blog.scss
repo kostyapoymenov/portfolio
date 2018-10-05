@@ -15,7 +15,7 @@
 
 .double-triagle {
   position: absolute;
-  bottom: 99%;
+  bottom: 99.9%;
   width: 100%;
   min-height: 150px;
   @include phones {
@@ -31,10 +31,10 @@
 
 .blog-left {
   width: 30%;
-  padding: 2% 3%;
+  padding: 2% 0;
   position: relative;
   @include tablets {
-    width: 80%;
+    width: 55%;
     height:100%;
     display: block;
     position: absolute;
@@ -42,11 +42,27 @@
     background-color: #253468;
     transition: right .3s;
     top: 0;
-    &.active_a {
-      right:21%;
+    &.blog-left-active-mob {
+      left:0;
       transition: right .3s;
       z-index:10;
+      position: fixed;
+      .blog-left__circle {
+        left: 50%;
+        @include phones {
+          left:70%;
+        }
+      }
+      @include phones {
+        width:80%;
+        .posit-fixed {
+          right: 25%;
+        }
+      }
     }
+  }
+  @include phones {
+    width: 100%;
   }
 
 }
@@ -55,12 +71,16 @@
   &.posit-fixed {
     position: fixed;
     top: 2%;
-    width: 24%;
+    width:inherit;
+    @include tablets {
+      width: auto;
+      padding: 2% 3%;
+    }
   }
 }
 
 .blog-nav__item {
-  &.active_a {
+  &.blog-left-active {
     .blog-nav__link {
       color: #004cd1;
       border-right: 2px solid #004cd1;
@@ -93,12 +113,18 @@
     width:70px;
     border-radius: 50%;
     background-color: #253468;
-    position: absolute;
+    position: fixed;
+    left: -15%;
     top:50%;
-    left:93%;
+    &.blog-left__circle-active {
+      left: -5%;
+    }
   }
     @include phones {
-      left:82%;
+      left: -20%;
+      &.blog-left__circle-active {
+        left: -11%;
+      }
     }
 }
 

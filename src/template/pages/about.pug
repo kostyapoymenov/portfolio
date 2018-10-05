@@ -33,18 +33,17 @@ block content
                 svg.arrow__svg(width='26' height='17')
                     use(xlink:href=`images/icons/sprite.svg#arrow_down`)
     section.about#about
-        .hero__substrate
-            svg.hero__substrate_svg(width='100%' height='100%' preserveAspectRatio="none")
-                use(xlink:href=`images/icons/sprite.svg#bg`)
+        .triangle
+            svg.triangle-shape(width='100%' height='100%' viewBox="0 0 1000 90" preserveAspectRatio="none")
+                polygon.triangle-shape__left(points="0,0 0,90 500.8,90 500.8,85")
+                polygon.triangle-shape__right(points="1000,0 1000,90 500,90 500,85")
         .about__left
             .about__inner
-                .triangle.about__triangle-left
-                    svg.triangle-shape(width='100%' height='100%' viewBox="0 0 900 120")
-                        use(xlink:href='images/icons/sprite.svg#about_bg_left')
+
                 .about__left_title
                     .block-title Обо мне
-                        svg.title-star(width='100' height='100')
-                            use.title-star__svg(xlink:href=`images/icons/sprite.svg#stars2`)
+                        svg.title-star__svg(width='100' height='100')
+                            use(xlink:href=`images/icons/sprite.svg#stars2`)
                 .about__left_description
                     .user-desc
                         .user-desc__image
@@ -57,9 +56,6 @@ block content
                             p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
         .about__right
             .about__inner
-                .triangle.about__triangle-right
-                    svg.triangle-shape(width='100%' height='100%' viewBox="0 0 900 120")
-                        use(xlink:href='images/icons/sprite.svg#about_bg_right')
                 .about__right_title
                     .block-subtitle Чем я могу быть вам полезен
                 .about__right_desc.text-content
@@ -85,7 +81,7 @@ block content
                                                         circle( r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)" class="circle__second circle-50")
                                                     .skill__title #{skills[0][1]}
     section.map
-        .google-map
+        .google-map#map
         .map__content
             .contacts
                 .contacts__title
@@ -94,7 +90,7 @@ block content
                         .contacts__item
                             .contacts-row__icon
                                 svg.contacts-row__svg(width='40' height='40' viewBox="0 0 40 40")
-                                    use(xlink:href=`images/icons/sprite.svg#phone_n`)
+                                    use(xlink:href=`images/icons/sprite.svg#skype_n`)
                             .contacts-row__title kostya807740
                         .contacts__item
                             .contacts-row__icon
@@ -153,4 +149,3 @@ block content
         .footer__bottom © Poymenov Konstantin | Создано с любовью в LoftSchool | 2018
 
 
-    //script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDXLebC2DzSqTGGRbrrhMNhVphM5nxvKfY&callback=initMap" async defer)

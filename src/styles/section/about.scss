@@ -92,19 +92,20 @@
   opacity: .1;
 }
 
-.title-star {
+.title-star__svg {
   position: absolute;
   top: 0;
   left: 0;
   height: 100%;
   z-index: 1;
   width: 100%;
-}
-
-.title-star__svg {
-  opacity: .3;
-  height:100%;
-  width: 100%;
+  fill: none;
+  stroke: #474b57;
+  opacity: .4;
+  &.title-star__svg-white{
+    stroke: #ffffff;
+    opacity: .3;
+  }
 }
 
 .arrow__down {
@@ -114,22 +115,6 @@
 .about {
   width: 100%;
   display: flex;
-  .hero__substrate {
-    bottom:93%;
-    display: none;
-    @include tablets {
-      display: block;
-      z-index: 1;
-      height: 15%;
-    }
-    @include phones {
-      bottom:95%;
-    }
-    .hero__substrate_svg {
-      fill: #f2f0e8;
-      fill-opacity: 1;
-    }
-  }
   @include tablets {
     flex-direction: column;
   }
@@ -137,24 +122,22 @@
 
 .triangle {
   position: absolute;
-  width: 100.1%;
-  bottom: 99%;
+  width: 100%;
+  bottom: 100%;
   fill: #ffffff;
-  &.about__triangle-left {
-    left: 0;
-    svg {
-      fill: #f2f0e8;
-    }
-  }
-  &.about__triangle-right {
-    right: 0;
-    svg {
-      fill: #ffffff;
-    }
-  }
+}
 
+.triangle-shape {
+  display: block;
+}
+
+.triangle-shape__left {
+  fill: #f2f0e8;
+}
+.triangle-shape__right {
+  fill: #ffffff;
   @include tablets {
-    display: none;
+    fill: #f2f0e8;
   }
 }
 
@@ -162,6 +145,7 @@
   width:50%;
   position: relative;
   background-color: #f2f0e8;
+  padding: 3% 0;
   @include tablets {
     width:100%;
     z-index: 10;
@@ -248,6 +232,7 @@
 .about__right {
   width:50%;
   position: relative;
+  padding: 3% 0;
   @include tablets {
     width:100%;
   }
@@ -393,7 +378,9 @@
   position: relative;
 }
 
-.google-map {}
+.google-map {
+  height:100%;
+}
 
 .map__content {
   position: absolute;
@@ -402,7 +389,7 @@
   transform: translate(-50%, -50%);
   padding: rem(35px) rem(20px);
   background-color: #ffffff;
-  opacity: .7;
+  opacity: .92;
   width:rem(580px);
   @include tablets {
     width:40%;
@@ -417,6 +404,7 @@
 }
 
 .contacts__title {
+  padding: 0 5%;
   .block-subtitle {
     margin-bottom: rem(15px);
     @include tablets {

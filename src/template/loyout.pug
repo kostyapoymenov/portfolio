@@ -10,9 +10,10 @@ html(lang='ru')
         title #{title}
         link(rel='stylesheet', href='styles/main.min.css')
     body
-        include section/preloader.pug
+        //include section/preloader.pug
         block content
 
         include section/hamburger.pug
-        script(script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js")
+        script(src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js")
+        script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDXLebC2DzSqTGGRbrrhMNhVphM5nxvKfY")
         script(type="text/javascript" src="js/main.js")

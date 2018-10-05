@@ -8,9 +8,7 @@
     <link rel="stylesheet" href="styles/main.min.css">
   </head>
   <body>
-    <div class="preloader" id="page-preloader">
-      <div class="loader"><span class="load-perc">0%</span></div>
-    </div>
+    <!--include section/preloader.pug-->
     <section class="hero">
       <div class="hero__links">
         <div class="social">
@@ -46,22 +44,18 @@
           </svg></a></div>
     </section>
     <section class="about" id="about">
-      <div class="hero__substrate">
-        <svg class="hero__substrate_svg" width="100%" height="100%" preserveAspectRatio="none">
-          <use xlink:href="images/icons/sprite.svg#bg"></use>
+      <div class="triangle">
+        <svg class="triangle-shape" width="100%" height="100%" viewBox="0 0 1000 90" preserveAspectRatio="none">
+          <polygon class="triangle-shape__left" points="0,0 0,90 500.8,90 500.8,85"></polygon>
+          <polygon class="triangle-shape__right" points="1000,0 1000,90 500,90 500,85"></polygon>
         </svg>
       </div>
       <div class="about__left">
         <div class="about__inner">
-          <div class="triangle about__triangle-left">
-            <svg class="triangle-shape" width="100%" height="100%" viewBox="0 0 900 120">
-              <use xlink:href="images/icons/sprite.svg#about_bg_left"></use>
-            </svg>
-          </div>
           <div class="about__left_title">
             <div class="block-title">Обо мне
-              <svg class="title-star" width="100" height="100">
-                <use class="title-star__svg" xlink:href="images/icons/sprite.svg#stars2"></use>
+              <svg class="title-star__svg" width="100" height="100">
+                <use xlink:href="images/icons/sprite.svg#stars2"></use>
               </svg>
             </div>
           </div>
@@ -82,11 +76,6 @@
       </div>
       <div class="about__right">
         <div class="about__inner">
-          <div class="triangle about__triangle-right">
-            <svg class="triangle-shape" width="100%" height="100%" viewBox="0 0 900 120">
-              <use xlink:href="images/icons/sprite.svg#about_bg_right"></use>
-            </svg>
-          </div>
           <div class="about__right_title">
             <div class="block-subtitle">Чем я могу быть вам полезен</div>
           </div>
@@ -203,7 +192,7 @@
       </div>
     </section>
     <section class="map">
-      <div class="google-map"></div>
+      <div class="google-map" id="map"></div>
       <div class="map__content">
         <div class="contacts">
           <div class="contacts__title">
@@ -212,7 +201,7 @@
               <div class="contacts__item">
                 <div class="contacts-row__icon">
                   <svg class="contacts-row__svg" width="40" height="40" viewBox="0 0 40 40">
-                    <use xlink:href="images/icons/sprite.svg#phone_n"></use>
+                    <use xlink:href="images/icons/sprite.svg#skype_n"></use>
                   </svg>
                 </div>
                 <div class="contacts-row__title">kostya807740</div>
@@ -294,7 +283,6 @@
       </div>
       <div class="footer__bottom">© Poymenov Konstantin | Создано с любовью в LoftSchool | 2018</div>
     </footer>
-    <!--script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDXLebC2DzSqTGGRbrrhMNhVphM5nxvKfY&callback=initMap" async defer)-->
     <div class="hamburger"><a class="hamburger__link"><span class="hamburger__link_item"></span></a></div>
     <div class="hamburger-menu">
       <nav class="hamburger-menu__nav">
@@ -306,7 +294,8 @@
         </ul>
       </nav>
     </div>
-    <script script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDXLebC2DzSqTGGRbrrhMNhVphM5nxvKfY"></script>
     <script type="text/javascript" src="js/main.js"></script>
   </body>
 </html>

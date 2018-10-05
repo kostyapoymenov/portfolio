@@ -104,9 +104,9 @@ function svg(done)  {
         .pipe(
             cheerio({
                 run($) {
-                    $("[style], [width], [height]")
-                        // .removeAttr("fill")
-                        // .removeAttr("stroke")
+                    $("[fill], [stroke], [style], [width], [height]")
+                        .removeAttr("fill")
+                        .removeAttr("stroke")
                         .removeAttr("style")
                         .removeAttr("width")
                         .removeAttr("height");
