@@ -180,42 +180,34 @@ $(document).ready(function() {
 
 
 // Прелоадер
-    const preloadBlock = () => {
-        var     preloader           = document.querySelector('#page-preloader'),
-                images              = document.images,
-                imagesCount         = images.length,
-                imagesLoadedCount   = 0,
-                percDisplay         = document.querySelector('.load-perc');
-        // let count = 0;
+    // const preloadBlock = () => {
+    //     var     preloader           = document.querySelector('#page-preloader'),
+    //             images              = document.images,
+    //             imagesCount         = images.length,
+    //             imagesLoadedCount   = 0,
+    //             percDisplay         = document.querySelector('.load-perc');
 
-    // const createImg = function (img) {
-    //     const img = new Image();
-    //     img.addEventListener('load', () => count++ )
-    //     img.src = img
+    //     for( let i = 0; i < imagesCount; i++ ) {
+    //         const   imageClone          = new Image();
+    //                 imageClone.onload   = imageLoaded;
+    //                 imageClone.onerror  = imageLoaded;
+    //                 imageClone.src      = images[i].src;
+    //     }
+
+    //     function imageLoaded() {
+    //         imagesLoadedCount++;
+    //         percDisplay.innerHTML = (((100 / imagesCount) * imagesLoadedCount) << 0) + '%';
+    //         if( imagesLoadedCount >= imagesCount ) {
+    //             setTimeout(function() {
+    //                 if( !preloader.classList.contains('done') ){
+    //                     preloader.classList.add('done');
+    //                 }
+    //             }, 1000);
+    //         }
+    //     }
     // }
-    // createImg('../bg.jpg');
 
-        for( let i = 0; i < imagesCount; i++ ) {
-            const   imageClone          = new Image();
-                    imageClone.onload   = imageLoaded;
-                    imageClone.onerror  = imageLoaded;
-                    imageClone.src      = images[i].src;
-        }
-
-        function imageLoaded() {
-            imagesLoadedCount++;
-            percDisplay.innerHTML = (((100 / imagesCount) * imagesLoadedCount) << 0) + '%';
-            if( imagesLoadedCount >= imagesCount ) {
-                setTimeout(function() {
-                    if( !preloader.classList.contains('done') ){
-                        preloader.classList.add('done');
-                    }
-                }, 1000);
-            }
-        }
-    }
-
-    preloadBlock();
+    // preloadBlock();
 
 
 
